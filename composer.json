@@ -5,6 +5,14 @@
     "type": "library",
     "license": "MIT",
     "autoload": {
-        "files": ["api.php"]
+        "files": [
+            "api.php"
+        ]
+    },
+    "require-dev": {
+        "ext-json": "*"
+    },
+    "scripts": {
+        "bump": "php version-bump.php"
     }
 }
