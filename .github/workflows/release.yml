@@ -21,7 +21,7 @@ jobs:
       - name: Bump version
         uses: php-actions/composer@v5
         with:
-          command: bump -- ${{ github.event.inputs.newVersion }}
+          command: version-bump -- ${{ github.event.inputs.newVersion }}
       - uses: EndBug/add-and-commit@v7
         with:
           add: 'composer.json'
