@@ -13,6 +13,6 @@
         "ext-json": "*"
     },
     "scripts": {
-        "bump": "php version-bump.php"
+        "version-bump": "php version-bump.php"
     }
 }
