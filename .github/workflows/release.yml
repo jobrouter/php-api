@@ -17,19 +17,18 @@ jobs:
         with:
           token: ${{ secrets.REPO_TOKEN }}
       - name: Install dependencies
-        uses: php-actions/composer@v5
+        uses: php-actions/composer@v6
       - name: Bump version
-        uses: php-actions/composer@v5
+        uses: php-actions/composer@v6
         with:
           command: version-bump -- ${{ github.event.inputs.newVersion }}
-      - uses: EndBug/add-and-commit@v7
+      - uses: EndBug/add-and-commit@v9
         with:
           add: 'composer.json'
           author_name: 'JobRouterBot'
           author_email: 'opensource@jobrouter.com'
           message: 'Bump version to ${{ github.event.inputs.newVersion }}'
-          pull_strategy: 'NO-PULL'
           push: true
           remove: ''
-          signoff: true
+          commit: --signoff
           tag: 'v${{ github.event.inputs.newVersion }}'
