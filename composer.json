@@ -1,6 +1,6 @@
 {
     "name": "jobrouter/api",
-    "version": "2022.1.6-stable",
+    "version": "2022.4.0-beta.1",
     "description": "PHP API classes for IDE autocompletion",
     "type": "library",
     "license": "MIT",
