@@ -4,7 +4,7 @@ namespace JobRouter\Log { if(false) {
     trait LogTrait
     {
         /**
-         * Set the name of the log file. You can also specify the format for the the filename.
+         * Set the name of the log file. You can also specify the format for the filename.
          *
          * Default: processName_version_YYYYMMDD.log
          *
@@ -12,7 +12,7 @@ namespace JobRouter\Log { if(false) {
          * @param string $format Filename format.<br/>The following variables can be used in the format string: {filename}, {date}.
          * @param string $dateFormat Date format for date part of filename.<br/>Only considered when {date} is used in filename format.
          */
-        public final function setLogFilename($filename, $format = '{filename}_{date}', $dateFormat = 'Ymd')
+        final public function setLogFilename($filename, $format = '{filename}_{date}', $dateFormat = 'Ymd'): void
         {
         }
         /**
@@ -22,7 +22,7 @@ namespace JobRouter\Log { if(false) {
          *
          * @param string $filePath
          */
-        public final function setLogFilePath($filePath)
+        final public function setLogFilePath($filePath): void
         {
         }
         /**
@@ -32,7 +32,7 @@ namespace JobRouter\Log { if(false) {
          *
          * @param string $channel
          */
-        public final function setLogChannel($channel)
+        final public function setLogChannel($channel): void
         {
         }
         /**
@@ -44,7 +44,7 @@ namespace JobRouter\Log { if(false) {
          *
          * @param string $level
          */
-        public final function setLogLevel($level)
+        final public function setLogLevel($level): void
         {
         }
         /**
@@ -57,131 +57,83 @@ namespace JobRouter\Log { if(false) {
          *
          * @param string $format
          */
-        public final function setLogMessageFormat($format)
+        final public function setLogMessageFormat($format): void
         {
         }
         /**
          * Disables the output formatting for log messages. Log messages are written as-is to log file.
          */
-        public final function rawLog()
+        final public function rawLog(): void
         {
         }
         /**
          * Writes a parsable string representation of the parameter to the log file.
-         *
-         * @param mixed $var
          */
-        public final function dump($var)
+        final public function dump(mixed $var): void
         {
         }
         /**
          * System is unusable.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function emergency($message, array $context = [])
+        final public function emergency(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Action must be taken immediately.
          *
          * Example: External database unavailable.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function alert($message, array $context = [])
+        final public function alert(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Critical conditions.
          *
          * Example: Unexpected exception.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function critical($message, array $context = [])
+        final public function critical(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Runtime errors that do not require immediate action but should typically be logged and monitored.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function error($message, array $context = [])
+        final public function error(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * \Exceptional occurrences that are not errors.
          *
          * Example: Undesirable things that are not necessarily wrong.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function warning($message, array $context = [])
+        final public function warning(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Normal but significant events.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function notice($message, array $context = [])
+        final public function notice(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Interesting events.
          *
          * Example: SQL logs.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function info($message, array $context = [])
+        final public function info(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Detailed debug information.
-         *
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function debug($message, array $context = [])
+        final public function debug(string|\Stringable $message, array $context = []): void
         {
         }
         /**
          * Logs with an arbitrary level.
          *
          * Possible values for level: DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERGENCY
-         *
-         * @param mixed $level
-         * @param string $message
-         * @param array $context
-         *
-         * @return void
          */
-        public final function log($level, $message, array $context = [])
+        final public function log(mixed $level, string|\Stringable $message, array $context = []): void
         {
         }
     }
@@ -195,16 +147,15 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string
          */
-        public final function getName()
+        final public function getName()
         {
         }
         /**
          * Returns the JobRouter DB connection.
          *
-         * @return \JobRouter\Common\Database\ConnectionInterface
          * @throws \JobRouterException
          */
-        public final function getJobDB() : \JobRouter\Common\Database\ConnectionInterface
+        final public function getJobDB(): \JobRouter\Common\Database\ConnectionInterface
         {
         }
         /**
@@ -212,7 +163,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Globally unique identifier (GUID)
          */
-        public final function getGUID()
+        final public function getGUID()
         {
         }
         /**
@@ -224,7 +175,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Date in YYYY-MM-DD HH:II:SS format
          */
-        public final function getUnformattedDate($dateFormat, $date, $includeTime = false)
+        final public function getUnformattedDate($dateFormat, $date, $includeTime = false)
         {
         }
         /**
@@ -238,7 +189,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Date in requested format
          */
-        public final function getFormattedDate($id, $date = false, $isTimestamp = false, $fullDateTime = false, $timezone = '')
+        final public function getFormattedDate($id, $date = false, $isTimestamp = false, $fullDateTime = false, $timezone = '')
         {
         }
         /**
@@ -248,7 +199,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return bool true on success, false on error
          */
-        public final function removeDir($path)
+        final public function removeDir($path)
         {
         }
         /**
@@ -258,7 +209,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Date as UNIX timestamp
          */
-        public final function getTimestamp($date)
+        final public function getTimestamp($date)
         {
         }
         /**
@@ -270,7 +221,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Full path of file in data folder
          */
-        public final function getFullDataPath($path = '', $processName = '', $processVersion = '')
+        final public function getFullDataPath($path = '', $processName = '', $processVersion = '')
         {
         }
         /**
@@ -282,7 +233,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Full path of file in functions folder
          */
-        public final function getFullFunctionsPath($path = '', $processName = '', $processVersion = '')
+        final public function getFullFunctionsPath($path = '', $processName = '', $processVersion = '')
         {
         }
         /**
@@ -290,7 +241,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Full path of output folder
          */
-        public final function getFullOutputPath()
+        final public function getFullOutputPath()
         {
         }
         /**
@@ -298,7 +249,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Full path of temp folder
          */
-        public final function getFullTempPath()
+        final public function getFullTempPath()
         {
         }
         /**
@@ -308,7 +259,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Full path of attached file
          */
-        public final function getFullUploadPath($path = '')
+        final public function getFullUploadPath($path = '')
         {
         }
         /**
@@ -319,7 +270,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Complete URL for opening the step
          */
-        public final function getStepUrl($workflowId, $userName = '')
+        final public function getStepUrl($workflowId, $userName = '')
         {
         }
         /**
@@ -330,7 +281,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Complete URL for opening the incident history
          */
-        public final function getIncidentUrl($processId, $userName = '')
+        final public function getIncidentUrl($processId, $userName = '')
         {
         }
         /**
@@ -340,7 +291,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getDefaultTimezone()
+        final public function getDefaultTimezone()
         {
         }
         /**
@@ -352,7 +303,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getUserTimezone($userName)
+        final public function getUserTimezone($userName)
         {
         }
         /**
@@ -365,7 +316,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function convertToDefaultTimezone($dateTimeValueInUserTimezone, $userTimezone)
+        final public function convertToDefaultTimezone($dateTimeValueInUserTimezone, $userTimezone)
         {
         }
         /**
@@ -378,7 +329,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function convertToUserTimezone($dateTimeValueInDefaultTimezone, $userTimezone)
+        final public function convertToUserTimezone($dateTimeValueInDefaultTimezone, $userTimezone)
         {
         }
         /**
@@ -388,7 +339,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string
          */
-        public final function hashPassword($password)
+        final public function hashPassword($password)
         {
         }
         /**
@@ -399,7 +350,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return bool
          */
-        public final function verifyPassword($password, $hash)
+        final public function verifyPassword($password, $hash)
         {
         }
         /**
@@ -410,17 +361,15 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return \JobArchive_ResultListUrlBuilder
          */
-        public final function getJobArchiveResultListUrlBuilder($resultListId)
+        final public function getJobArchiveResultListUrlBuilder($resultListId)
         {
         }
         /**
          * Returns the filename converted with the current platform encoding
          *
          * @param string $filename Filename to convert
-         *
-         * @return string
          */
-        public function getFilesystemFilename($filename) : string
+        public function getFilesystemFilename($filename): string
         {
         }
     }
@@ -431,7 +380,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Process name
          */
-        public final function getProcessName()
+        final public function getProcessName()
         {
         }
         /**
@@ -439,7 +388,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Process version
          */
-        public final function getVersion()
+        final public function getVersion()
         {
         }
         /**
@@ -447,7 +396,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Step number
          */
-        public final function getStep()
+        final public function getStep()
         {
         }
         /**
@@ -455,7 +404,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Jobfunction
          */
-        public final function getJobFunction()
+        final public function getJobFunction()
         {
         }
         /**
@@ -463,7 +412,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Username
          */
-        public final function getUsername()
+        final public function getUsername()
         {
         }
         /**
@@ -471,7 +420,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string current username
          */
-        public final function getCurrentUsername()
+        final public function getCurrentUsername()
         {
         }
         /**
@@ -479,7 +428,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Initiator username
          */
-        public final function getInitiator()
+        final public function getInitiator()
         {
         }
         /**
@@ -487,16 +436,17 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Incident number
          */
-        public final function getIncident()
+        final public function getIncident()
         {
         }
         /**
          * Returns the label of the current step.
          *
          * @return string Step label
+         *
          * @throws \JobRouterException
          */
-        public final function getStepLabel()
+        final public function getStepLabel()
         {
         }
         /**
@@ -504,7 +454,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Process Id
          */
-        public final function getProcessId()
+        final public function getProcessId()
         {
         }
         /**
@@ -512,7 +462,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Workflow Id
          */
-        public final function getWorkflowId()
+        final public function getWorkflowId()
         {
         }
         /**
@@ -520,7 +470,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Process Step Id
          */
-        public final function getStepId()
+        final public function getStepId()
         {
         }
         /**
@@ -528,7 +478,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Incident start date
          */
-        public final function getStartDate()
+        final public function getStartDate()
         {
         }
         /**
@@ -536,7 +486,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Incident escalation date
          */
-        public final function getIncidentEscalationDate()
+        final public function getIncidentEscalationDate()
         {
         }
         /**
@@ -544,7 +494,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Step indate
          */
-        public final function getInDate()
+        final public function getInDate()
         {
         }
         /**
@@ -552,7 +502,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Step escalation date
          */
-        public final function getStepEscalationDate()
+        final public function getStepEscalationDate()
         {
         }
         /**
@@ -564,7 +514,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getIncidentValue($attributeName)
+        final public function getIncidentValue($attributeName)
         {
         }
         /**
@@ -572,7 +522,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return bool true, if incident is in simulation mode, otherwise false
          */
-        public final function isSimulation()
+        final public function isSimulation()
         {
         }
         /**
@@ -586,7 +536,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getMessage($messageName, $languageName = '', array $replacements = null)
+        final public function getMessage($messageName, $languageName = '', ?array $replacements = null)
         {
         }
         /**
@@ -598,7 +548,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getConfiguration($configurationName)
+        final public function getConfiguration($configurationName)
         {
         }
         /**
@@ -607,45 +557,49 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param string $dialogElementName Dialog element name
          *
          * @return string Value of the dialog element
+         *
          * @throws \JobRouterException
          */
         public function getDialogValue($dialogElementName)
         {
         }
         /**
-         * Returns a processtable field value.
+         * Returns a process table field value.
          *
          * @param string $fieldName Field name
          * @param bool $rawValue Flag indicating that value should be returned "raw"
          *
-         * @return mixed Value of the processtable field
+         * @return mixed Value of the process table field
+         *
          * @throws \JobRouterException
          */
-        public final function getTableValue($fieldName, $rawValue = false)
+        final public function getTableValue($fieldName, $rawValue = false)
         {
         }
         /**
-         * Sets a processtable field value.
+         * Sets a process table field value.
          *
          * @param string $fieldName Field name
          * @param mixed $fieldValue New value
          *
          * @return void
+         *
          * @throws \JobRouterException
          */
-        public final function setTableValue($fieldName, $fieldValue)
+        final public function setTableValue($fieldName, $fieldValue)
         {
         }
         /**
-         * Returns a previous procestable field value (i. e. the value of a procestable field from the previous step).
+         * Returns a previous process table field value (i.e. the value of a process table field from the previous step).
          *
          * @param string $fieldName Field name
          * @param bool $rawValue Flag indicating that value should be returned "raw"
          *
-         * @return mixed Value of the procestable field
+         * @return mixed Value of the process table field
+         *
          * @throws \JobRouterException
          */
-        public final function getOldTableValue($fieldName, $rawValue = false)
+        final public function getOldTableValue($fieldName, $rawValue = false)
         {
         }
         /**
@@ -657,9 +611,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param bool $rawValue Flag indicating that value should be returned "raw"
          *
          * @return mixed Value of the subtable field
+         *
          * @throws \JobRouterException
          */
-        public final function getSubtableValue($subtable, $row, $fieldName, $rawValue = false)
+        final public function getSubtableValue($subtable, $row, $fieldName, $rawValue = false)
         {
         }
         /**
@@ -671,9 +626,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param mixed $value New value
          *
          * @return void
+         *
          * @throws \JobRouterException
          */
-        public final function setSubtableValue($subtable, $row, $fieldName, $value)
+        final public function setSubtableValue($subtable, $row, $fieldName, $value)
         {
         }
         /**
@@ -682,9 +638,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param string $subtable Subtable Name
          *
          * @return int Number of rows
+         *
          * @throws \JobRouterException
          */
-        public final function getSubtableCount($subtable)
+        final public function getSubtableCount($subtable)
         {
         }
         /**
@@ -693,9 +650,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param string $subtable Subtable name
          *
          * @return array Subtable row ids
+         *
          * @throws \JobRouterException
          */
-        public final function getSubtableRowIds($subtable)
+        final public function getSubtableRowIds($subtable)
         {
         }
         /**
@@ -705,9 +663,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param int $row Row Id
          *
          * @return void
+         *
          * @throws \JobRouterException
          */
-        public final function deleteSubtableRow($subtable, $row)
+        final public function deleteSubtableRow($subtable, $row)
         {
         }
         /**
@@ -718,9 +677,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param array $rowData Row data (associative array with subtable field names and field values)
          *
          * @return void
+         *
          * @throws \JobRouterException
          */
-        public final function insertSubtableRow($subtable, $row, array $rowData = null)
+        final public function insertSubtableRow($subtable, $row, ?array $rowData = null)
         {
         }
         /**
@@ -733,7 +693,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function clearSubtable($subtable, $deleteAttachedFiles = false)
+        final public function clearSubtable($subtable, $deleteAttachedFiles = false)
         {
         }
         /**
@@ -741,11 +701,9 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @param string $connectionName Connection name
          *
-         * @return \JobRouter\Common\Database\ConnectionInterface
-         *
          * @throws \JobRouterException
          */
-        public final function getDBConnection($connectionName)
+        final public function getDBConnection($connectionName): \JobDB
         {
         }
         /**
@@ -755,11 +713,11 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getLanguage()
+        final public function getLanguage()
         {
         }
         /**
-         * Attaches a file to the processtable or a subtable.
+         * Attaches a file to the process table or a subtable.
          *
          * @param string $filepath
          * @param string $fieldname
@@ -768,11 +726,11 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function attachFile($filepath, $fieldname, $row = 0, $subtable = '')
+        final public function attachFile($filepath, $fieldname, $row = 0, $subtable = '')
         {
         }
         /**
-         * Deletes a file from the processtable or a subtable.
+         * Deletes a file from the process table or a subtable.
          *
          * @param string $fieldname
          * @param int $row
@@ -780,7 +738,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function deleteFile($fieldname, $row = 0, $subtable = '')
+        final public function deleteFile($fieldname, $row = 0, $subtable = '')
         {
         }
         /**
@@ -795,7 +753,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getOriginalFilename($fieldname, $row = 0, $subtable = '', $includeFolder = false)
+        final public function getOriginalFilename($fieldname, $row = 0, $subtable = '', $includeFolder = false)
         {
         }
         /**
@@ -803,7 +761,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return bool true, if step is a request, otherwise false
          */
-        public final function isRequest()
+        final public function isRequest()
         {
         }
         /**
@@ -811,7 +769,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return bool true, if step is an answer, otherwise false
          */
-        public final function isAnswer()
+        final public function isAnswer()
         {
         }
         /**
@@ -819,7 +777,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string backlink
          */
-        public final function getBacklink()
+        final public function getBacklink()
         {
         }
         /**
@@ -827,7 +785,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Notice
          */
-        public final function getNotice()
+        final public function getNotice()
         {
         }
         /**
@@ -835,7 +793,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string 2nd notice
          */
-        public final function getNotice2()
+        final public function getNotice2()
         {
         }
         /**
@@ -843,7 +801,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Priority
          */
-        public final function getPriority()
+        final public function getPriority()
         {
         }
         /**
@@ -853,7 +811,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return void
          */
-        public final function setPriority($priority)
+        final public function setPriority($priority)
         {
         }
         /**
@@ -861,7 +819,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Current subtable name
          */
-        public final function getCurrentSubtable()
+        final public function getCurrentSubtable()
         {
         }
         /**
@@ -869,7 +827,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Current subtable row id
          */
-        public final function getCurrentSubtableRowId()
+        final public function getCurrentSubtableRowId()
         {
         }
         /**
@@ -878,21 +836,13 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param string $parameterName Name of the input parameter
          *
          * @return mixed Input parameter value
+         *
          * @throws \JobRouterException
          */
-        public final function getInputParameter($parameterName)
+        final public function getInputParameter($parameterName)
         {
         }
-        /**
-         * @param $rowId
-         *
-         * @internal
-         * @return mixed
-         */
-        public function executeForRow($rowId)
-        {
-        }
-        public abstract function execute($rowId = null);
+        abstract public function execute($rowId = null);
 
     }
     abstract class BoxActionFunction extends \JobRouter\Engine\Runtime\PhpFunction\AbstractFunction
@@ -902,7 +852,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Process box id
          */
-        public final function getBoxId()
+        final public function getBoxId()
         {
         }
         /**
@@ -910,7 +860,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return int Selected box action
          */
-        public final function getBoxAction()
+        final public function getBoxAction()
         {
         }
         /**
@@ -918,7 +868,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Label of the selected box action
          */
-        public final function getBoxActionLabel()
+        final public function getBoxActionLabel()
         {
         }
         /**
@@ -926,7 +876,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return array Workflowids of the selected steps
          */
-        public final function getWorkflowIds()
+        final public function getWorkflowIds()
         {
         }
         /**
@@ -934,7 +884,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Username of the user who triggered the box action
          */
-        public final function getUserName()
+        final public function getUserName()
         {
         }
         /**
@@ -942,7 +892,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Unique id for the execution of the box action
          */
-        public final function getCurrentGUID()
+        final public function getCurrentGUID()
         {
         }
         /**
@@ -950,7 +900,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @param string $workflowId
          */
-        public final function removeWorkflowId($workflowId)
+        final public function removeWorkflowId($workflowId)
         {
         }
         /**
@@ -959,9 +909,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param string $workflowId
          *
          * @return \JobRouter\Engine\Runtime\Step\Step
+         *
          * @throws \JobRouterException
          */
-        public final function getStepByWorkflowId($workflowId)
+        final public function getStepByWorkflowId($workflowId)
         {
         }
         /**
@@ -973,27 +924,28 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getConfiguration($configurationName)
+        final public function getConfiguration($configurationName)
         {
         }
         /**
          * Returns the process step ids for the selected steps.
          *
          * @return array Process step ids of the selected steps
+         *
          * @throws \JobRouterException
          */
-        public final function getStepIds()
+        final public function getStepIds()
         {
         }
         /**
          * Adds a message to be shown to the user after execution of the box action.
          *
-         * @param string $messageText Message text
+         * @param array|string $messageText Message text
          * @param int $messageType Message type (0 = Success, 1 = Info, 2 = Warning, 3 = Error)
          *
          * @throws \JobRouterException
          */
-        public final function addMessage($messageText, $messageType = 1)
+        final public function addMessage(array|string $messageText, int $messageType = 1): void
         {
         }
         /**
@@ -1001,7 +953,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string current username
          */
-        public final function getCurrentUsername()
+        final public function getCurrentUsername()
         {
         }
         /**
@@ -1016,7 +968,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getMessage(string $messageName, ?string $languageName = '', array $replacements = null) : string
+        final public function getMessage(string $messageName, ?string $languageName = '', ?array $replacements = null): string
         {
         }
         /**
@@ -1026,10 +978,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getLanguage() : string
+        final public function getLanguage(): string
         {
         }
-        public abstract function execute();
+        abstract public function execute();
     }
     abstract class DialogFunction extends \JobRouter\Engine\Runtime\PhpFunction\AbstractStepFunction
     {
@@ -1038,23 +990,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function save()
-        {
-        }
-        /**
-         * @internal
-         *
-         * @param array $parameters
-         */
-        public final function setParameters(array $parameters)
-        {
-        }
-        /**
-         * @internal
-         *
-         * @param array $dialogValues
-         */
-        public final function setDialogValues(array $dialogValues)
+        final public function save()
         {
         }
         /**
@@ -1064,7 +1000,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return mixed|null
          */
-        public final function getParameter($parameterName)
+        final public function getParameter($parameterName)
         {
         }
         /**
@@ -1073,13 +1009,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param $key
          * @param $returnValue
          */
-        public final function setReturnValue($key, $returnValue)
-        {
-        }
-        /**
-         * @internal
-         */
-        public final function getReturnValues()
+        final public function setReturnValue($key, $returnValue)
         {
         }
         /**
@@ -1088,9 +1018,10 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          * @param string $dialogElementName
          *
          * @return mixed|string
+         *
          * @throws \JobRouterException
          */
-        public final function getDialogValue($dialogElementName)
+        final public function getDialogValue($dialogElementName)
         {
         }
     }
@@ -1103,7 +1034,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Value of the dialog element
          */
-        public final function getDialogValue($dialogElementName)
+        final public function getDialogValue($dialogElementName)
         {
         }
     }
@@ -1116,7 +1047,7 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Value of the dialog element
          */
-        public final function getDialogValue($dialogElementName)
+        final public function getDialogValue($dialogElementName)
         {
         }
     }
@@ -1129,13 +1060,13 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Value of the dialog element
          */
-        public final function getDialogValue($dialogElementName)
+        final public function getDialogValue($dialogElementName)
         {
         }
         /**
          * Saves the current step
          */
-        public final function save()
+        final public function save()
         {
         }
     }
@@ -1148,13 +1079,13 @@ namespace JobRouter\Engine\Runtime\PhpFunction { if(false) {
          *
          * @return string Value of the dialog element
          */
-        public final function getDialogValue($dialogElementName)
+        final public function getDialogValue($dialogElementName)
         {
         }
-        public final function getStepStatus()
+        final public function getStepStatus()
         {
         }
-        public final function setStepStatus($status)
+        final public function setStepStatus($status)
         {
         }
     }
@@ -1293,24 +1224,24 @@ namespace JobRouter\Common\Database { if(false) {
          * Executes an, optionally parametrized, SQL query.
          *
          * @param string $sql
-         * @param array $parameterValues
-         * @param array $parameterTypes
+         * @param array $params
+         * @param array|null $types
          *
          * @return false|int|Result
          * @throws \JobRouterException
          */
-        public function preparedSelect(string $sql, array $params, array $types = null)
+        public function preparedSelect(string $sql, array $params, ?array $types = [])
         {
         }
         /**
          * @param string $sql
-         * @param array $parameterValues
-         * @param array|null $parameterTypes
+         * @param array $params
+         * @param array|null $types
          *
          * @return mixed
          * @throws \JobRouterException
          */
-        public function preparedExecute(string $sql, array $params, array $types = null)
+        public function preparedExecute(string $sql, array $params, ?array $types = [])
         {
         }
         /**
@@ -1352,7 +1283,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int    number of step
          */
-        public final function getStep()
+        final public function getStep()
         {
         }
         /**
@@ -1360,7 +1291,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    processid
          */
-        public final function getProcessId()
+        final public function getProcessId()
         {
         }
         /**
@@ -1368,7 +1299,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    workflowid
          */
-        public final function getWorkflowId()
+        final public function getWorkflowId()
         {
         }
         /**
@@ -1376,7 +1307,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    backlink
          */
-        public final function getBacklink()
+        final public function getBacklink()
         {
         }
         /**
@@ -1384,7 +1315,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int    pool
          */
-        public final function getPool()
+        final public function getPool()
         {
         }
         /**
@@ -1392,7 +1323,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    jobfunction
          */
-        public final function getJobfunction()
+        final public function getJobfunction()
         {
         }
         /**
@@ -1400,7 +1331,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    username
          */
-        public final function getUsername()
+        final public function getUsername()
         {
         }
         /**
@@ -1408,7 +1339,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string dialog name
          */
-        public final function getDialogName()
+        final public function getDialogName()
         {
         }
         /**
@@ -1416,7 +1347,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int    indate timestamp
          */
-        public final function getIndate()
+        final public function getIndate()
         {
         }
         /**
@@ -1424,7 +1355,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int    outdate timestamp
          */
-        public final function getOutdate()
+        final public function getOutdate()
         {
         }
         /**
@@ -1432,7 +1363,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string escalation date
          */
-        public final function getEscalationDate()
+        final public function getEscalationDate()
         {
         }
         /**
@@ -1440,39 +1371,39 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int escalation timestamp
          */
-        public final function getEscalationTimeStamp()
+        final public function getEscalationTimeStamp()
         {
         }
         /**
          * Checks if this is a request
          *
-         * @return true or false
+         * @return bool
          */
-        public final function isRequest()
+        final public function isRequest()
         {
         }
         /**
          * Checks if step is assigned
          *
-         * @return true or false
+         * @return bool
          */
-        public final function isAssigned()
+        final public function isAssigned()
         {
         }
         /**
          * Checks if this is an answer
          *
-         * @return true or false
+         * @return bool
          */
-        public final function isAnswer()
+        final public function isAnswer()
         {
         }
         /**
          * Checks if this is aborted
          *
-         * @return true or false
+         * @return bool
          */
-        public final function isAborted()
+        final public function isAborted()
         {
         }
         /**
@@ -1485,7 +1416,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getTableValue($fieldName, $rawValue = false)
+        final public function getTableValue($fieldName, $rawValue = false)
         {
         }
         /**
@@ -1499,7 +1430,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          * @throws \Exception
          * @throws \JobRouterException
          */
-        public final function setTableValue($fieldName, $fieldValue)
+        final public function setTableValue($fieldName, $fieldValue)
         {
         }
         /**
@@ -1514,7 +1445,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function getSubtableValue($subtable, $row, $fieldName, $rawValue = false)
+        final public function getSubtableValue($subtable, $row, $fieldName, $rawValue = false)
         {
         }
         /**
@@ -1530,7 +1461,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          * @throws \Exception
          * @throws \JobRouterException
          */
-        public final function setSubtableValue($subtable, $row, $fieldName, $value)
+        final public function setSubtableValue($subtable, $row, $fieldName, $value)
         {
         }
         /**
@@ -1540,16 +1471,16 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return array Subtable row ids
          */
-        public final function getSubtableRowIds($subtable)
+        final public function getSubtableRowIds($subtable)
         {
         }
-        public final function getStatus()
+        final public function getStatus()
         {
         }
-        public final function getStepStatus()
+        final public function getStepStatus()
         {
         }
-        public final function isReserved()
+        final public function isReserved()
         {
         }
         /**
@@ -1557,7 +1488,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @throws \JobRouterException
          */
-        public final function save()
+        final public function save()
         {
         }
         /**
@@ -1565,13 +1496,13 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string date of resubmission (timestamp)
          */
-        public final function getResubmissionDate()
+        final public function getResubmissionDate()
         {
         }
-        public final function getPriority()
+        final public function getPriority()
         {
         }
-        public final function isSimulation()
+        final public function isSimulation()
         {
         }
         /**
@@ -1580,7 +1511,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          * @return    string     process name
          *
          */
-        public final function getProcessName()
+        final public function getProcessName()
         {
         }
         /**
@@ -1588,7 +1519,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int    process version
          */
-        public final function getVersion()
+        final public function getVersion()
         {
         }
         /**
@@ -1596,7 +1527,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    int    incident number
          */
-        public final function getIncidentNumber()
+        final public function getIncidentNumber()
         {
         }
         /**
@@ -1606,7 +1537,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return int Number of rows
          */
-        public final function getSubtableCount($subtable)
+        final public function getSubtableCount($subtable)
         {
         }
         /**
@@ -1614,7 +1545,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * return    string    notice
          */
-        public final function getNotice()
+        final public function getNotice()
         {
         }
         /**
@@ -1622,7 +1553,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * return    string    notice
          */
-        public final function getNotice2()
+        final public function getNotice2()
         {
         }
         /**
@@ -1630,7 +1561,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * return    int    error code
          */
-        public final function getError()
+        final public function getError()
         {
         }
         /**
@@ -1638,7 +1569,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * return    string    error message
          */
-        public final function getErrorMessage()
+        final public function getErrorMessage()
         {
         }
         /**
@@ -1646,7 +1577,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    step id (GUID)
          */
-        public final function getStepId()
+        final public function getStepId()
         {
         }
         /**
@@ -1654,7 +1585,7 @@ namespace JobRouter\Engine\Runtime\Step { if(false) {
          *
          * @return    string    step summary
          */
-        public final function getSummary()
+        final public function getSummary()
         {
         }
     }
@@ -1678,7 +1609,7 @@ namespace { if(false) {
          *
          * @param DateTime|string $validFrom
          */
-        public function setValidFrom($validFrom)
+        public function setValidFrom($validFrom): void
         {
         }
         /**
@@ -1686,7 +1617,7 @@ namespace { if(false) {
          *
          * @param DateTime|string $validUntil
          */
-        public function setValidUntil($validUntil)
+        public function setValidUntil($validUntil): void
         {
         }
         public function addCompareFilter($fieldName, $fieldValue, $operator)
@@ -1719,8 +1650,6 @@ namespace { if(false) {
         }
         /**
          * Use exact revision for determining document
-         *
-         * @param bool $useExactRevision
          */
         public function setUseExactRevision(bool $useExactRevision)
         {
@@ -1761,6 +1690,7 @@ namespace { if(false) {
          * Returns the URL for accessing the result list.
          *
          * @return string
+         *
          * @throws \JobRouterException
          */
         public function getUrl()
